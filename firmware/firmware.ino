@@ -127,20 +127,20 @@ void loop() {
 
   ///// We need to split the data into sub json messages for the IoTF. Temperature and Humidity will always be part of the message
   if (messagecounter == 10){
-    snprintf (msg, sizeof(msg), "{\"d\":{\"temperature\": %d.%d, \"humidity\": %d.%d,  \"name\": \"IBM-IoT-Giveaway\" }}", ta, tb, ha, hb);
+    snprintf (msg, sizeof(msg), "{\"d\":{\"temperature\": %d.%02d, \"humidity\": %d.%02d,  \"name\": \"IBM-IoT-Giveaway\" }}", ta, tb, ha, hb);
     client.publish("iot-2/evt/Giveaway/fmt/json", msg);
     client.loop();
   }else if (messagecounter == 20){
-    snprintf (msg, sizeof(msg), "{\"d\":{\"temperature\": %d.%d, \"humidity\": %d.%d,  \"firmware\": 0.23 }}", ta, tb, ha, hb);
+    snprintf (msg, sizeof(msg), "{\"d\":{\"temperature\": %d.%02d, \"humidity\": %d.%02d,  \"firmware\": 0.23 }}", ta, tb, ha, hb);
     client.publish("iot-2/evt/Giveaway/fmt/json", msg);
     client.loop();
   }else if (messagecounter == 30){
-    snprintf (msg, sizeof(msg), "{\"d\":{\"temperature\": %d.%d, \"humidity\": %d.%d,  \"tinkeredBy\": \"@ansi\" }}", ta, tb, ha, hb);
+    snprintf (msg, sizeof(msg), "{\"d\":{\"temperature\": %d.%02d, \"humidity\": %d.%02d,  \"tinkeredBy\": \"@ansi\" }}", ta, tb, ha, hb);
     client.publish("iot-2/evt/Giveaway/fmt/json", msg);
     client.loop();
     messagecounter = 0;
   }else{
-    snprintf (msg, sizeof(msg), "{\"d\":{\"temperature\": %d.%d, \"humidity\": %d.%d,  \"uptime\": %d}}", ta, tb, ha, hb, millis());
+    snprintf (msg, sizeof(msg), "{\"d\":{\"temperature\": %d.%02d, \"humidity\": %d.%02d,  \"uptime\": %d}}", ta, tb, ha, hb, millis());
     client.publish("iot-2/evt/Giveaway/fmt/json", msg);
     client.loop();
   }
