@@ -1,0 +1,423 @@
+[
+    {
+        "id": "a63877ae.bf5db8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "91d15ed2.3c9c3",
+        "type": "ibmiot in",
+        "z": "a63877ae.bf5db8",
+        "authentication": "quickstart",
+        "apiKey": "",
+        "inputType": "evt",
+        "deviceId": "wearedevelopers-05",
+        "applicationId": "",
+        "deviceType": "nodemcu",
+        "eventType": "+",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT App In",
+        "service": "quickstart",
+        "allDevices": false,
+        "allApplications": false,
+        "allDeviceTypes": true,
+        "allEvents": true,
+        "allCommands": false,
+        "allFormats": false,
+        "x": 209.03097534179688,
+        "y": 263.056884765625,
+        "wires": [
+            [
+                "9a4894a1.9a6878",
+                "ef54a5d5.934e88",
+                "6d1b030a.9be09c",
+                "cafd7277.d40ab",
+                "45435b2a.307a94"
+            ]
+        ]
+    },
+    {
+        "id": "9a4894a1.9a6878",
+        "type": "debug",
+        "z": "a63877ae.bf5db8",
+        "name": "temperature",
+        "active": true,
+        "tosidebar": true,
+        "complete": "payload.d.temperature",
+        "x": 620.5309143066406,
+        "y": 125.05687665939331,
+        "wires": []
+    },
+    {
+        "id": "ef54a5d5.934e88",
+        "type": "debug",
+        "z": "a63877ae.bf5db8",
+        "name": "humidity",
+        "active": true,
+        "complete": "payload.d.humidity",
+        "x": 599.5309219360352,
+        "y": 430.0568971633911,
+        "wires": []
+    },
+    {
+        "id": "69d215a2.9013dc",
+        "type": "ui_gauge",
+        "z": "a63877ae.bf5db8",
+        "name": "",
+        "group": "adb5cfbf.f0d1d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1052.5485496520996,
+        "y": 87.60224342346191,
+        "wires": []
+    },
+    {
+        "id": "d3fcd351.803a5",
+        "type": "ui_gauge",
+        "z": "a63877ae.bf5db8",
+        "name": "",
+        "group": "ccab273b.f82e98",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "20",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1046.532154083252,
+        "y": 391.5938320159912,
+        "wires": []
+    },
+    {
+        "id": "be0b5fde.3a29a",
+        "type": "ui_chart",
+        "z": "a63877ae.bf5db8",
+        "name": "",
+        "group": "adb5cfbf.f0d1d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1054.5492820739746,
+        "y": 172.5532569885254,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "936437b1.9468b8",
+        "type": "ui_chart",
+        "z": "a63877ae.bf5db8",
+        "name": "",
+        "group": "ccab273b.f82e98",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "20",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1042.5317611694336,
+        "y": 488.54668045043945,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a8a63c46.03b6b",
+        "type": "ui_audio",
+        "z": "a63877ae.bf5db8",
+        "name": "Audio",
+        "group": "adb5cfbf.f0d1d",
+        "voice": "",
+        "always": true,
+        "x": 1550.5400085449219,
+        "y": 593.509373664856,
+        "wires": []
+    },
+    {
+        "id": "6d1b030a.9be09c",
+        "type": "change",
+        "z": "a63877ae.bf5db8",
+        "name": "temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 621.5296020507812,
+        "y": 158.00617599487305,
+        "wires": [
+            [
+                "69d215a2.9013dc",
+                "be0b5fde.3a29a"
+            ]
+        ]
+    },
+    {
+        "id": "cafd7277.d40ab",
+        "type": "change",
+        "z": "a63877ae.bf5db8",
+        "name": "humidity",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 601.5414733886719,
+        "y": 464.99583435058594,
+        "wires": [
+            [
+                "d3fcd351.803a5",
+                "936437b1.9468b8",
+                "849f1bbc.0df938"
+            ]
+        ]
+    },
+    {
+        "id": "849f1bbc.0df938",
+        "type": "switch",
+        "z": "a63877ae.bf5db8",
+        "name": "Humidity check",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "80",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 820.5488357543945,
+        "y": 611.0360279083252,
+        "wires": [
+            [
+                "cc655d82.539fe"
+            ],
+            [
+                "b5dc232c.1712b"
+            ]
+        ]
+    },
+    {
+        "id": "88ba5588.2e3908",
+        "type": "rbe",
+        "z": "a63877ae.bf5db8",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 1199.549186706543,
+        "y": 593.2412214279175,
+        "wires": [
+            [
+                "a4bdbe59.32b7e"
+            ]
+        ]
+    },
+    {
+        "id": "cc655d82.539fe",
+        "type": "template",
+        "z": "a63877ae.bf5db8",
+        "name": "Warning",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Warning humidity to high!",
+        "output": "str",
+        "x": 1033.547607421875,
+        "y": 554.1220116615295,
+        "wires": [
+            [
+                "88ba5588.2e3908"
+            ]
+        ]
+    },
+    {
+        "id": "b5dc232c.1712b",
+        "type": "template",
+        "z": "a63877ae.bf5db8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Humidity back to normal!",
+        "output": "str",
+        "x": 1036.5443496704102,
+        "y": 636.1274499893188,
+        "wires": [
+            [
+                "88ba5588.2e3908"
+            ]
+        ]
+    },
+    {
+        "id": "a4bdbe59.32b7e",
+        "type": "watson-text-to-speech",
+        "z": "a63877ae.bf5db8",
+        "name": "Test2Speech",
+        "lang": "en-GB",
+        "langhidden": "en-GB",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "en-GB_KateVoice",
+        "voicehidden": "",
+        "format": "audio/wav",
+        "password": "Dronk1212!",
+        "payload-response": true,
+        "default-endpoint": true,
+        "service-endpoint": "https://stream.watsonplatform.net/text-to-speech/api",
+        "x": 1382.5489654541016,
+        "y": 592.4544124603271,
+        "wires": [
+            [
+                "a8a63c46.03b6b"
+            ]
+        ]
+    },
+    {
+        "id": "45435b2a.307a94",
+        "type": "cloudant out",
+        "z": "a63877ae.bf5db8",
+        "name": "",
+        "cloudant": "",
+        "database": "sensor",
+        "service": "wearedevelopers-cloudantNoSQLDB",
+        "payonly": true,
+        "operation": "insert",
+        "x": 600.5439147949219,
+        "y": 261.8943328857422,
+        "wires": []
+    },
+    {
+        "id": "adb5cfbf.f0d1d",
+        "type": "ui_group",
+        "z": "",
+        "name": "Temperature",
+        "tab": "c7e95746.933fc8",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ccab273b.f82e98",
+        "type": "ui_group",
+        "z": "",
+        "name": "Humidity",
+        "tab": "c7e95746.933fc8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c7e95746.933fc8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "IoT-Weatherstation",
+        "icon": "dashboard"
+    }
+]
